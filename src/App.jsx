@@ -17,6 +17,18 @@ import Features from "./elements/features";
 import FlappyBird from "./elements/FlappyBird";
 import Game2048 from "./elements/Game2048";
 import CarRace from "./elements/CarRace";
+
+function ErrorPage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-white">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">Oops!</h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400">Something went wrong.</p>
+      </div>
+    </div>
+  );
+}
+
 let router = createBrowserRouter([
   {
     path: "/",
@@ -24,10 +36,11 @@ let router = createBrowserRouter([
       <>
         <Navbar />
         <Home />
-          <Features />
+        <Features />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/numbercount",
@@ -37,7 +50,8 @@ let router = createBrowserRouter([
         <Numbercount />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/tictac",
@@ -47,7 +61,8 @@ let router = createBrowserRouter([
         <Tictac />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/rps",
@@ -57,7 +72,8 @@ let router = createBrowserRouter([
         <Rps />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/quiz",
@@ -67,7 +83,8 @@ let router = createBrowserRouter([
         <Quiz />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/guessnum",
@@ -77,7 +94,8 @@ let router = createBrowserRouter([
         <Guessnum />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/snakegame",
@@ -87,7 +105,8 @@ let router = createBrowserRouter([
         <Snake />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/typingspeed",
@@ -97,7 +116,8 @@ let router = createBrowserRouter([
         <Typingspeed />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/hangman",
@@ -107,7 +127,8 @@ let router = createBrowserRouter([
         <Hangman />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/flappybird",
@@ -117,7 +138,8 @@ let router = createBrowserRouter([
         <FlappyBird />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/explore",
@@ -127,7 +149,8 @@ let router = createBrowserRouter([
         <Explore />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/game2048",
@@ -137,7 +160,8 @@ let router = createBrowserRouter([
         <Game2048 />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/carrace",
@@ -147,7 +171,8 @@ let router = createBrowserRouter([
         <CarRace />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   },
   {
     path: "/searchbar",
@@ -157,23 +182,15 @@ let router = createBrowserRouter([
         <SearchBar />
         <Footer />
       </>
-    )
+    ),
+    errorElement: <ErrorPage />
   }
-
-]);
+], { basename: "/funbyte" });
 
 function App() {
-
   return (
-    <>
-     <RouterProvider router={router} />
-    
-
-
-
-
-    </>
-  )
+    <RouterProvider router={router} />
+  );
 }
 
 export default App
